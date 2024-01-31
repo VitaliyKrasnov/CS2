@@ -24,9 +24,15 @@ Console.WriteLine($"Большая из цифр числа {num} - {(num/10 > n
 // Задача 4: Напишите программу, которая на вход принимает натуральное число N, а на выходе
 // показывает его цифры через запятую.
 int N = 838472131;
+string digits = "";
 Console.Write($"Число {N} состоит из следующих цифр: ");
-foreach (var digit in N.ToString())
+for (int i = N; i > 0; i /= 10)
 {
-    Console.Write($"{digit},");
+    digits = i%10 + "," + digits;
 }
-Console.Write("\b ");
+Console.Write(digits + "\b \b");
+// foreach (var digit in N.ToString())
+// {
+//     Console.Write($"{digit},");
+// }
+//Console.Write("\b \b");
